@@ -31,11 +31,17 @@ namespace PruebaCRUD.View.WinForm
 
             cphelper = new CPMXClientHelper();
             datoshelper = new DatoClientHelper();
+
+            this.Load += MainForm_Load;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
             //Cargar combos
+            this.estados = await cphelper.Estados();
+            this.sexos = await datoshelper.Sexos();
+
+
         }
     }
 }

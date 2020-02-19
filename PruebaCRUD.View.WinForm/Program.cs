@@ -11,13 +11,9 @@ namespace PruebaCRUD.View.WinForm
     static class Program
     {
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-            //HttpClientMiTelcelHelper helper = new HttpClientMiTelcelHelper();
-            //await helper.ConsultaNumeros();
         }
     }
 }

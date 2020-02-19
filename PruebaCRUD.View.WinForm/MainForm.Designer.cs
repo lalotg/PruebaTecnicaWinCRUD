@@ -342,7 +342,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(798, 182);
+            this.btnGuardar.Location = new System.Drawing.Point(888, 182);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 31;
@@ -389,7 +389,6 @@
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
