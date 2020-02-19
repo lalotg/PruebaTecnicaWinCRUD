@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogicaNegocioCPMX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaCRUD.CPMX.Data.EF\PruebaCRUD.CPMX.Data.EF.csproj">
+      <Project>{49946BC8-29EB-4D7D-B506-370C6ED8F692}</Project>
+      <Name>PruebaCRUD.CPMX.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.CPMX.Model\PruebaCRUD.CPMX.Model.csproj">
+      <Project>{290E5EFA-B26B-48B2-A82C-5185AFA89762}</Project>
+      <Name>PruebaCRUD.CPMX.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

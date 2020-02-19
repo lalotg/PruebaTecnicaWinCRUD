@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EDM\CPMXEntities.cs" />
     <Compile Include="EDM\EDMCPMX.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,8 +85,18 @@
       <DependentUpon>EDMCPMX.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioCPMX.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaCRUD.CPMX.Model\PruebaCRUD.CPMX.Model.csproj">
+      <Project>{290E5EFA-B26B-48B2-A82C-5185AFA89762}</Project>
+      <Name>PruebaCRUD.CPMX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.Data.Helper\PruebaCRUD.Data.Helper.csproj">
+      <Project>{0E3C1219-3FB3-435A-A71E-3FE1ED5DD503}</Project>
+      <Name>PruebaCRUD.Data.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EDM\EDMCPMX.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
