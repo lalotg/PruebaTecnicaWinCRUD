@@ -58,10 +58,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -321,15 +321,15 @@
             this.label15.Text = "Número";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dataGridView1
+            // dgvDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 218);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(966, 384);
-            this.dataGridView1.TabIndex = 29;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(12, 218);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.RowTemplate.Height = 24;
+            this.dgvDatos.Size = new System.Drawing.Size(966, 384);
+            this.dgvDatos.TabIndex = 29;
             // 
             // btnNuevo
             // 
@@ -339,6 +339,7 @@
             this.btnNuevo.TabIndex = 30;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -348,6 +349,7 @@
             this.btnGuardar.TabIndex = 31;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // MainForm
             // 
@@ -356,7 +358,7 @@
             this.ClientSize = new System.Drawing.Size(990, 614);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtCalle);
@@ -389,7 +391,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,7 +429,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGuardar;
     }
