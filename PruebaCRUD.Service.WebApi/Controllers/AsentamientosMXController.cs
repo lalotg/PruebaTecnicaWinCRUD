@@ -17,7 +17,8 @@ namespace PruebaCRUD.Service.WebApi.Controllers
             db = new LogicaNegocioCPMX();
         }
 
-        public IEnumerable<Asentamiento> Get(string cp)
+        [HttpGet]
+        public IEnumerable<Asentamiento> PorCP(string cp)
         {
             return db.AsentamientosCP(cp);
         }

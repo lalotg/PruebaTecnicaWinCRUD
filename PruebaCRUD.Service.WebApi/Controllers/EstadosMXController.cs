@@ -22,6 +22,11 @@ namespace PruebaCRUD.Service.WebApi.Controllers
             return db.ObtenerEstados();
         }
 
+        public Estado Get(int id)
+        {
+            return db.EstadoId(id);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

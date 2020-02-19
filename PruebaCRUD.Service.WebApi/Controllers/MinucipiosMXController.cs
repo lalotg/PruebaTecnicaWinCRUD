@@ -16,9 +16,9 @@ namespace PruebaCRUD.Service.WebApi.Controllers
             db = new LogicaNegocioCPMX();
         }
 
-        public IEnumerable<Municipio> Get(int idestado)
+        public Municipio Get(int idestado,int idmunicipio)
         {
-            return db.ObtenerMunicipiosPorEstado(idestado);
+            return db.MunicipioPorEM(idestado,idmunicipio);
         }
 
         protected override void Dispose(bool disposing)
