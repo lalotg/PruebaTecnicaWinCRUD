@@ -58,6 +58,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -84,6 +85,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaCRUD.CPMX.Model\PruebaCRUD.CPMX.Model.csproj">
+      <Project>{290E5EFA-B26B-48B2-A82C-5185AFA89762}</Project>
+      <Name>PruebaCRUD.CPMX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.Model\PruebaCRUD.Model.csproj">
+      <Project>{55F5DCD1-5CA2-4C2E-B514-5C2C69C85100}</Project>
+      <Name>PruebaCRUD.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.View.ClientHelper\PruebaCRUD.View.ClientHelper.csproj">
+      <Project>{6266FCBE-1BB3-403C-83B3-A23AB08AA3AE}</Project>
+      <Name>PruebaCRUD.View.ClientHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

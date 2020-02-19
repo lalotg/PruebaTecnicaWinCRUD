@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CPMXClientHelper.cs" />
+    <Compile Include="DatoClientHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\PruebaCRUD.CPMX.Model\PruebaCRUD.CPMX.Model.csproj">
       <Project>{290e5efa-b26b-48b2-a82c-5185afa89762}</Project>
       <Name>PruebaCRUD.CPMX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.Model\PruebaCRUD.Model.csproj">
+      <Project>{55F5DCD1-5CA2-4C2E-B514-5C2C69C85100}</Project>
+      <Name>PruebaCRUD.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
