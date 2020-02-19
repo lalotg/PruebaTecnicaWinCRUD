@@ -13,10 +13,10 @@ namespace PruebaCRUD.Data.Helper
         {
             string meta = m;
 
-            string initialCatalog = "Dinamicel";
-            string host = "dinamidb.c7nmkzmey2sq.us-east-2.rds.amazonaws.com";
-            string user = "admin";
-            string password = "&45Hist0r14$";
+            string initialCatalog = "lalonano_prueba";
+            string host = "sql.freeasphost.net";
+            string user = "lalonano";
+            string password = "3x4m3n@N0th1s";
 
             return BuildConnection.GetConnectionString(meta, initialCatalog, host, user, password);
         }

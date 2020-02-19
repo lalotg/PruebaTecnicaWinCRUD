@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +50,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EDM\EDMCPMX.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDMCPMX.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\EDMCPMX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\EDMCPMX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDMCPMX.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_AsentamientosCP_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_Asentamientos_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_EstadoId_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_Estados_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_MunicipioPorEM_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SPS_CPMX_MunicipiosPorEstado_Result.cs">
+      <DependentUpon>EDMCPMX.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="EDM\" />
+    <EntityDeploy Include="EDM\EDMCPMX.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDMCPMX.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EDM\EDMCPMX.edmx.diagram">
+      <DependentUpon>EDMCPMX.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EDM\EDMCPMX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDMCPMX.Context.cs</LastGenOutput>
+      <DependentUpon>EDMCPMX.edmx</DependentUpon>
+    </Content>
+    <Content Include="EDM\EDMCPMX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDMCPMX.edmx</DependentUpon>
+      <LastGenOutput>EDMCPMX.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

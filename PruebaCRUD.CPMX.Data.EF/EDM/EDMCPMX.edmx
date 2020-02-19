@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CPMXEDMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SPI_CPMX_Asentamiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdAsentamiento" Type="int" Mode="In" />
+          <Parameter Name="Asentamiento" Type="varchar" Mode="In" />
+          <Parameter Name="IdMunicipio" Type="int" Mode="In" />
+          <Parameter Name="IdEstado" Type="int" Mode="In" />
+          <Parameter Name="IdTipo" Type="int" Mode="In" />
+          <Parameter Name="CP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPI_CPMX_Estado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPI_CPMX_Municipio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdMunicipio" Type="int" Mode="In" />
+          <Parameter Name="IdEstado" Type="int" Mode="In" />
+          <Parameter Name="Municipio" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPI_CPMX_TipoAsentamiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdTipo" Type="int" Mode="In" />
+          <Parameter Name="TipoAsentamiento" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPS_CPMX_Asentamientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEstado" Type="int" Mode="In" />
+          <Parameter Name="IdMunicipio" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPS_CPMX_AsentamientosCP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPS_CPMX_EstadoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPS_CPMX_Estados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPS_CPMX_MunicipioPorEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEstado" Type="int" Mode="In" />
+          <Parameter Name="IdMunicipio" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPS_CPMX_MunicipiosPorEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEstado" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="CPMXEDMModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CPMXEDMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CPMXEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SPI_CPMX_Asentamiento">
+            <Parameter Name="IdAsentamiento" Mode="In" Type="Int32" />
+            <Parameter Name="Asentamiento" Mode="In" Type="String" />
+            <Parameter Name="IdMunicipio" Mode="In" Type="Int32" />
+            <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+            <Parameter Name="IdTipo" Mode="In" Type="Int32" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPI_CPMX_Estado">
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPI_CPMX_Municipio">
+            <Parameter Name="IdMunicipio" Mode="In" Type="Int32" />
+            <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+            <Parameter Name="Municipio" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPI_CPMX_TipoAsentamiento">
+            <Parameter Name="IdTipo" Mode="In" Type="Int32" />
+            <Parameter Name="TipoAsentamiento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_CPMX_Asentamientos" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_Asentamientos_Result)">
+            <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+            <Parameter Name="IdMunicipio" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_CPMX_AsentamientosCP" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_AsentamientosCP_Result)">
+            <Parameter Name="CP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_CPMX_EstadoId" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_EstadoId_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_CPMX_Estados" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_Estados_Result)" />
+          <FunctionImport Name="SPS_CPMX_MunicipioPorEM" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_MunicipioPorEM_Result)">
+            <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+            <Parameter Name="IdMunicipio" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_CPMX_MunicipiosPorEstado" ReturnType="Collection(CPMXEDMModel.SPS_CPMX_MunicipiosPorEstado_Result)">
+            <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SPS_CPMX_Asentamientos_Result">
+          <Property Type="Int32" Name="IdAsentamiento" Nullable="false" />
+          <Property Type="Int32" Name="IdEstado" Nullable="true" />
+          <Property Type="Int32" Name="IdMunicipio" Nullable="false" />
+          <Property Type="String" Name="Asentamiento" Nullable="true" MaxLength="270" />
+          <Property Type="String" Name="CP" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SPS_CPMX_AsentamientosCP_Result">
+          <Property Type="Int32" Name="IdAsentamiento" Nullable="false" />
+          <Property Type="Int32" Name="IdEstado" Nullable="true" />
+          <Property Type="Int32" Name="IdMunicipio" Nullable="false" />
+          <Property Type="String" Name="Asentamiento" Nullable="true" MaxLength="270" />
+          <Property Type="String" Name="CP" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SPS_CPMX_EstadoId_Result">
+          <Property Type="Int32" Name="IdEstado" Nullable="false" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="SPS_CPMX_Estados_Result">
+          <Property Type="Int32" Name="IdEstado" Nullable="false" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="SPS_CPMX_MunicipioPorEM_Result">
+          <Property Type="Int32" Name="IdMunicipio" Nullable="false" />
+          <Property Type="Int32" Name="IdEstado" Nullable="false" />
+          <Property Type="String" Name="Municipio" Nullable="true" MaxLength="270" />
+        </ComplexType>
+        <ComplexType Name="SPS_CPMX_MunicipiosPorEstado_Result">
+          <Property Type="Int32" Name="IdMunicipio" Nullable="false" />
+          <Property Type="Int32" Name="IdEstado" Nullable="false" />
+          <Property Type="String" Name="Municipio" Nullable="true" MaxLength="270" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CPMXEDMModelStoreContainer" CdmEntityContainer="CPMXEntities" >
+          <FunctionImportMapping FunctionImportName="SPI_CPMX_Asentamiento" FunctionName="CPMXEDMModel.Store.SPI_CPMX_Asentamiento" />
+          <FunctionImportMapping FunctionImportName="SPI_CPMX_Estado" FunctionName="CPMXEDMModel.Store.SPI_CPMX_Estado" />
+          <FunctionImportMapping FunctionImportName="SPI_CPMX_Municipio" FunctionName="CPMXEDMModel.Store.SPI_CPMX_Municipio" />
+          <FunctionImportMapping FunctionImportName="SPI_CPMX_TipoAsentamiento" FunctionName="CPMXEDMModel.Store.SPI_CPMX_TipoAsentamiento" />
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_Asentamientos" FunctionName="CPMXEDMModel.Store.SPS_CPMX_Asentamientos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_Asentamientos_Result">
+                <ScalarProperty Name="IdAsentamiento" ColumnName="IdAsentamiento" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="Asentamiento" ColumnName="Asentamiento" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_AsentamientosCP" FunctionName="CPMXEDMModel.Store.SPS_CPMX_AsentamientosCP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_AsentamientosCP_Result">
+                <ScalarProperty Name="IdAsentamiento" ColumnName="IdAsentamiento" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="Asentamiento" ColumnName="Asentamiento" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_EstadoId" FunctionName="CPMXEDMModel.Store.SPS_CPMX_EstadoId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_EstadoId_Result">
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_Estados" FunctionName="CPMXEDMModel.Store.SPS_CPMX_Estados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_Estados_Result">
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_MunicipioPorEM" FunctionName="CPMXEDMModel.Store.SPS_CPMX_MunicipioPorEM">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_MunicipioPorEM_Result">
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_CPMX_MunicipiosPorEstado" FunctionName="CPMXEDMModel.Store.SPS_CPMX_MunicipiosPorEstado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CPMXEDMModel.SPS_CPMX_MunicipiosPorEstado_Result">
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
