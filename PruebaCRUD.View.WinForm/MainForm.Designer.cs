@@ -61,6 +61,8 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,6 +203,7 @@
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(100, 22);
             this.txtCurp.TabIndex = 14;
+            this.txtCurp.Enter += new System.EventHandler(this.txtCurp_Enter);
             // 
             // txtTelefono
             // 
@@ -255,7 +258,7 @@
             // 
             // txtMunicipio
             // 
-            this.txtMunicipio.Location = new System.Drawing.Point(85, 137);
+            this.txtMunicipio.Location = new System.Drawing.Point(266, 140);
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(100, 22);
             this.txtMunicipio.TabIndex = 22;
@@ -263,7 +266,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 140);
+            this.label12.Location = new System.Drawing.Point(193, 143);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 17);
             this.label12.TabIndex = 21;
@@ -272,7 +275,7 @@
             // 
             // txtAsentamiento
             // 
-            this.txtAsentamiento.Location = new System.Drawing.Point(323, 137);
+            this.txtAsentamiento.Location = new System.Drawing.Point(475, 140);
             this.txtAsentamiento.Name = "txtAsentamiento";
             this.txtAsentamiento.Size = new System.Drawing.Size(100, 22);
             this.txtAsentamiento.TabIndex = 24;
@@ -280,7 +283,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(223, 140);
+            this.label13.Location = new System.Drawing.Point(375, 143);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 17);
             this.label13.TabIndex = 23;
@@ -289,7 +292,7 @@
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(525, 137);
+            this.txtCalle.Location = new System.Drawing.Point(677, 140);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(100, 22);
             this.txtCalle.TabIndex = 26;
@@ -297,7 +300,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(480, 140);
+            this.label14.Location = new System.Drawing.Point(632, 143);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(39, 17);
             this.label14.TabIndex = 25;
@@ -306,7 +309,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(729, 137);
+            this.txtNumero.Location = new System.Drawing.Point(863, 140);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 22);
             this.txtNumero.TabIndex = 28;
@@ -314,7 +317,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(665, 140);
+            this.label15.Location = new System.Drawing.Point(799, 143);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 17);
             this.label15.TabIndex = 27;
@@ -351,11 +354,31 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(72, 140);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(100, 22);
+            this.txtEstado.TabIndex = 33;
+            this.txtEstado.Enter += new System.EventHandler(this.txtEstado_Enter);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 143);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 17);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Estado";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 614);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvDatos);
@@ -432,5 +455,7 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label label16;
     }
 }
