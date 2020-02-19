@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="lalonano_pruebaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SPD_EXA_Dato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPI_EXA_Datos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
+          <Parameter Name="IdSexo" Type="int" Mode="In" />
+          <Parameter Name="EstadoNacimiento" Type="varchar" Mode="In" />
+          <Parameter Name="CURP" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="DireccionActual" Type="varchar" Mode="In" />
+          <Parameter Name="CP" Type="varchar" Mode="In" />
+          <Parameter Name="Municipio" Type="varchar" Mode="In" />
+          <Parameter Name="Asentamiento" Type="varchar" Mode="In" />
+          <Parameter Name="Calle" Type="varchar" Mode="In" />
+          <Parameter Name="Numero" Type="varchar" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="SPS_EXA_Datos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPS_PER_Sexos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPU_EXA_Datos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
+          <Parameter Name="IdSexo" Type="int" Mode="In" />
+          <Parameter Name="EstadoNacimiento" Type="varchar" Mode="In" />
+          <Parameter Name="CURP" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="DireccionActual" Type="varchar" Mode="In" />
+          <Parameter Name="CP" Type="varchar" Mode="In" />
+          <Parameter Name="Municipio" Type="varchar" Mode="In" />
+          <Parameter Name="Asentamiento" Type="varchar" Mode="In" />
+          <Parameter Name="Calle" Type="varchar" Mode="In" />
+          <Parameter Name="Numero" Type="varchar" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="lalonano_pruebaModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="lalonano_pruebaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatosEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SPD_EXA_Dato">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPI_EXA_Datos">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSexo" Mode="In" Type="Int32" />
+            <Parameter Name="EstadoNacimiento" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="DireccionActual" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Municipio" Mode="In" Type="String" />
+            <Parameter Name="Asentamiento" Mode="In" Type="String" />
+            <Parameter Name="Calle" Mode="In" Type="String" />
+            <Parameter Name="Numero" Mode="In" Type="String" />
+            <Parameter Name="Id" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_EXA_Datos" ReturnType="Collection(lalonano_pruebaModel.SPS_EXA_Datos_Result)" />
+          <FunctionImport Name="SPS_PER_Sexos" ReturnType="Collection(lalonano_pruebaModel.SPS_PER_Sexos_Result)" />
+          <FunctionImport Name="SPU_EXA_Datos">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSexo" Mode="In" Type="Int32" />
+            <Parameter Name="EstadoNacimiento" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="DireccionActual" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Municipio" Mode="In" Type="String" />
+            <Parameter Name="Asentamiento" Mode="In" Type="String" />
+            <Parameter Name="Calle" Mode="In" Type="String" />
+            <Parameter Name="Numero" Mode="In" Type="String" />
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SPS_EXA_Datos_Result">
+          <Property Type="Int32" Name="IdDato" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="PrimerApellido" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" />
+          <Property Type="Int32" Name="IdSexo" Nullable="true" />
+          <Property Type="String" Name="EstadoNacimiento" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CURP" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="DireccionActual" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Municipio" Nullable="true" MaxLength="170" />
+          <Property Type="String" Name="Asentamiento" Nullable="true" MaxLength="170" />
+          <Property Type="String" Name="Calle" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Numero" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="SPS_PER_Sexos_Result">
+          <Property Type="Int32" Name="IdSexo" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="120" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="lalonano_pruebaModelStoreContainer" CdmEntityContainer="DatosEntities" >
+          <FunctionImportMapping FunctionImportName="SPD_EXA_Dato" FunctionName="lalonano_pruebaModel.Store.SPD_EXA_Dato" />
+          <FunctionImportMapping FunctionImportName="SPI_EXA_Datos" FunctionName="lalonano_pruebaModel.Store.SPI_EXA_Datos" />
+          <FunctionImportMapping FunctionImportName="SPS_EXA_Datos" FunctionName="lalonano_pruebaModel.Store.SPS_EXA_Datos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lalonano_pruebaModel.SPS_EXA_Datos_Result">
+                <ScalarProperty Name="IdDato" ColumnName="IdDato" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="IdSexo" ColumnName="IdSexo" />
+                <ScalarProperty Name="EstadoNacimiento" ColumnName="EstadoNacimiento" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="DireccionActual" ColumnName="DireccionActual" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Asentamiento" ColumnName="Asentamiento" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPS_PER_Sexos" FunctionName="lalonano_pruebaModel.Store.SPS_PER_Sexos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lalonano_pruebaModel.SPS_PER_Sexos_Result">
+                <ScalarProperty Name="IdSexo" ColumnName="IdSexo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPU_EXA_Datos" FunctionName="lalonano_pruebaModel.Store.SPU_EXA_Datos" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

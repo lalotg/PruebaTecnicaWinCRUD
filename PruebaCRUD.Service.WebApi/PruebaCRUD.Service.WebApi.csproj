@@ -114,8 +114,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsentamientosMXController.cs" />
+    <Compile Include="Controllers\DatoController.cs" />
     <Compile Include="Controllers\EstadosMXController.cs" />
     <Compile Include="Controllers\MinucipiosMXController.cs" />
+    <Compile Include="Controllers\SexoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +145,14 @@
     <ProjectReference Include="..\PruebaCRUD.CPMX.Model\PruebaCRUD.CPMX.Model.csproj">
       <Project>{290e5efa-b26b-48b2-a82c-5185afa89762}</Project>
       <Name>PruebaCRUD.CPMX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.Datos.Business\PruebaCRUD.Datos.Business.csproj">
+      <Project>{6D59FB0E-D2CF-4D75-8D5B-D731FAA79124}</Project>
+      <Name>PruebaCRUD.Datos.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaCRUD.Model\PruebaCRUD.Model.csproj">
+      <Project>{55F5DCD1-5CA2-4C2E-B514-5C2C69C85100}</Project>
+      <Name>PruebaCRUD.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
