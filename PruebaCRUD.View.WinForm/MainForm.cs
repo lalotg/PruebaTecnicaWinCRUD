@@ -128,6 +128,9 @@ namespace PruebaCRUD.View.WinForm
                 {
                     //Actualizar
                     await this.datoshelper.UpDato(model);
+                    await this.CargaDatosGrid();
+                    //Limpiar formulario
+                    AsignaEnlaceDatos();
                 }
             }
             else
@@ -219,6 +222,14 @@ namespace PruebaCRUD.View.WinForm
                 txtAsentamiento.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtAsentamiento.AutoCompleteCustomSource = coll;
             }
+        }
+
+        private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Cargar registro activo
+            this.nuevo = false;
+
+            MessageBox.Show("Click");
         }
     }
 }

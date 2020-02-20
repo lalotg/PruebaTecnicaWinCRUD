@@ -337,6 +337,7 @@
             this.dgvDatos.RowTemplate.Height = 24;
             this.dgvDatos.Size = new System.Drawing.Size(966, 384);
             this.dgvDatos.TabIndex = 34;
+            this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
             // 
             // btnNuevo
             // 
