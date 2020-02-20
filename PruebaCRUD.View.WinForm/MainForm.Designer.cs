@@ -147,9 +147,10 @@
             // 
             // dtpFechaNacimiento
             // 
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(139, 64);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(145, 22);
             this.dtpFechaNacimiento.TabIndex = 9;
             // 
             // label6

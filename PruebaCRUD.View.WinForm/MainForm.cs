@@ -106,19 +106,28 @@ namespace PruebaCRUD.View.WinForm
             this.nuevo = true;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (validaFormulario()) { 
+            if (validaFormulario()) {
                 //Guardar o actualizar
-                if(this.nuevo)
+                var estado = (Estado)cboEstados.SelectedItem;
+                var sexo = (Sexo)cboSexos.SelectedItem;
+                model.IdSexo = sexo.IdSexo;
+                model.EstadoNacimiento = estado.Descripcion;
+
+                if (this.nuevo)
                 {
                     //Guardar
+                    await this.datoshelper.AddDatos(model);
+                    await this.CargaDatosGrid();
+                    //Limpiar formulario
 
+                    AsignaEnlaceDatos();
                 }
                 else
                 {
                     //Actualizar
-
+                    await this.datoshelper.UpDato(model);
                 }
             }
             else
