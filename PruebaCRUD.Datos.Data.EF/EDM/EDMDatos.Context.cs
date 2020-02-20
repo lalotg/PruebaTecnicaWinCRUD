@@ -37,7 +37,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPD_EXA_Dato", idParameter);
         }
     
-        public virtual int SPI_EXA_Datos(string nombre, string primerApellido, string segundoApellido, Nullable<System.DateTime> fechaNacimiento, Nullable<int> idSexo, string estadoNacimiento, string cURP, string telefono, string direccionActual, string cP, string municipio, string asentamiento, string calle, string numero, ObjectParameter id)
+        public virtual int SPI_EXA_Datos(string nombre, string primerApellido, string segundoApellido, Nullable<System.DateTime> fechaNacimiento, Nullable<int> idSexo, string estadoNacimiento, string cURP, string telefono, string direccionActual, string cP, string estado, string municipio, string asentamiento, string calle, string numero, ObjectParameter id)
         {
             var nombreParameter = nombre != null ?
                 new ObjectParameter("Nombre", nombre) :
@@ -78,6 +78,10 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
             var cPParameter = cP != null ?
                 new ObjectParameter("CP", cP) :
                 new ObjectParameter("CP", typeof(string));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
     
             var municipioParameter = municipio != null ?
                 new ObjectParameter("Municipio", municipio) :
@@ -95,7 +99,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
                 new ObjectParameter("Numero", numero) :
                 new ObjectParameter("Numero", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPI_EXA_Datos", nombreParameter, primerApellidoParameter, segundoApellidoParameter, fechaNacimientoParameter, idSexoParameter, estadoNacimientoParameter, cURPParameter, telefonoParameter, direccionActualParameter, cPParameter, municipioParameter, asentamientoParameter, calleParameter, numeroParameter, id);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPI_EXA_Datos", nombreParameter, primerApellidoParameter, segundoApellidoParameter, fechaNacimientoParameter, idSexoParameter, estadoNacimientoParameter, cURPParameter, telefonoParameter, direccionActualParameter, cPParameter, estadoParameter, municipioParameter, asentamientoParameter, calleParameter, numeroParameter, id);
         }
     
         public virtual ObjectResult<SPS_EXA_Datos_Result> SPS_EXA_Datos()
@@ -108,7 +112,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPS_PER_Sexos_Result>("SPS_PER_Sexos");
         }
     
-        public virtual int SPU_EXA_Datos(string nombre, string primerApellido, string segundoApellido, Nullable<System.DateTime> fechaNacimiento, Nullable<int> idSexo, string estadoNacimiento, string cURP, string telefono, string direccionActual, string cP, string municipio, string asentamiento, string calle, string numero, Nullable<int> id)
+        public virtual int SPU_EXA_Datos(string nombre, string primerApellido, string segundoApellido, Nullable<System.DateTime> fechaNacimiento, Nullable<int> idSexo, string estadoNacimiento, string cURP, string telefono, string direccionActual, string cP, string estado, string municipio, string asentamiento, string calle, string numero, Nullable<int> id)
         {
             var nombreParameter = nombre != null ?
                 new ObjectParameter("Nombre", nombre) :
@@ -149,6 +153,10 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
             var cPParameter = cP != null ?
                 new ObjectParameter("CP", cP) :
                 new ObjectParameter("CP", typeof(string));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
     
             var municipioParameter = municipio != null ?
                 new ObjectParameter("Municipio", municipio) :
@@ -170,7 +178,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
                 new ObjectParameter("Id", id) :
                 new ObjectParameter("Id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPU_EXA_Datos", nombreParameter, primerApellidoParameter, segundoApellidoParameter, fechaNacimientoParameter, idSexoParameter, estadoNacimientoParameter, cURPParameter, telefonoParameter, direccionActualParameter, cPParameter, municipioParameter, asentamientoParameter, calleParameter, numeroParameter, idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPU_EXA_Datos", nombreParameter, primerApellidoParameter, segundoApellidoParameter, fechaNacimientoParameter, idSexoParameter, estadoNacimientoParameter, cURPParameter, telefonoParameter, direccionActualParameter, cPParameter, estadoParameter, municipioParameter, asentamientoParameter, calleParameter, numeroParameter, idParameter);
         }
     }
 }

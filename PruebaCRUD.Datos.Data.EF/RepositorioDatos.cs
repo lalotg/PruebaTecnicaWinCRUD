@@ -1,4 +1,5 @@
 ﻿using PruebaCRUD.Data.Helper;
+using PruebaCRUD.Datos.Data.EF.EDM;
 using PruebaCRUD.Model;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PruebaCRUD.Datos.Data.EF.EDM
+namespace PruebaCRUD.Datos.Data.EF
 {
     public class RepositorioDatos : IDisposable
     {
@@ -54,6 +55,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
                         Telefono = item.Telefono,
                         DireccionActual = item.DireccionActual,
                         CP=  item.CP,
+                        Estado = item.Estado,
                         Municipio = item.Municipio,
                         Asentamiento = item.Asentamiento,
                         Calle = item.Calle,
@@ -83,6 +85,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
                     model.Telefono,
                     model.DireccionActual,
                     model.CP,
+                    model.Estado,
                     model.Municipio,
                     model.Asentamiento,
                     model.Calle,
@@ -114,6 +117,7 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
                     model.Telefono,
                     model.DireccionActual,
                     model.CP,
+                    model.Estado,
                     model.Municipio,
                     model.Asentamiento,
                     model.Calle,

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="lalonano_pruebaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="lalonano_pruebaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="SPD_EXA_Dato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="int" Mode="In" />
         </Function>
@@ -19,6 +19,7 @@
           <Parameter Name="Telefono" Type="varchar" Mode="In" />
           <Parameter Name="DireccionActual" Type="varchar" Mode="In" />
           <Parameter Name="CP" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
           <Parameter Name="Municipio" Type="varchar" Mode="In" />
           <Parameter Name="Asentamiento" Type="varchar" Mode="In" />
           <Parameter Name="Calle" Type="varchar" Mode="In" />
@@ -38,6 +39,7 @@
           <Parameter Name="Telefono" Type="varchar" Mode="In" />
           <Parameter Name="DireccionActual" Type="varchar" Mode="In" />
           <Parameter Name="CP" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
           <Parameter Name="Municipio" Type="varchar" Mode="In" />
           <Parameter Name="Asentamiento" Type="varchar" Mode="In" />
           <Parameter Name="Calle" Type="varchar" Mode="In" />
@@ -45,14 +47,13 @@
           <Parameter Name="Id" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="lalonano_pruebaModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="lalonano_pruebaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DatosEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="SPD_EXA_Dato">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SPI_EXA_Datos">
             <Parameter Name="Nombre" Mode="In" Type="String" />
@@ -65,6 +66,7 @@
             <Parameter Name="Telefono" Mode="In" Type="String" />
             <Parameter Name="DireccionActual" Mode="In" Type="String" />
             <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
             <Parameter Name="Municipio" Mode="In" Type="String" />
             <Parameter Name="Asentamiento" Mode="In" Type="String" />
             <Parameter Name="Calle" Mode="In" Type="String" />
@@ -84,6 +86,7 @@
             <Parameter Name="Telefono" Mode="In" Type="String" />
             <Parameter Name="DireccionActual" Mode="In" Type="String" />
             <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
             <Parameter Name="Municipio" Mode="In" Type="String" />
             <Parameter Name="Asentamiento" Mode="In" Type="String" />
             <Parameter Name="Calle" Mode="In" Type="String" />
@@ -107,6 +110,7 @@
           <Property Type="String" Name="Asentamiento" Nullable="true" MaxLength="170" />
           <Property Type="String" Name="Calle" Nullable="true" MaxLength="150" />
           <Property Type="String" Name="Numero" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="170" />
         </ComplexType>
         <ComplexType Name="SPS_PER_Sexos_Result">
           <Property Type="Int32" Name="IdSexo" Nullable="false" />
@@ -138,6 +142,7 @@
                 <ScalarProperty Name="Asentamiento" ColumnName="Asentamiento" />
                 <ScalarProperty Name="Calle" ColumnName="Calle" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -76,6 +76,8 @@ namespace PruebaCRUD.View.WinForm
             this.txtDireccionActual.DataBindings.Add("Text", model, "DireccionActual");
             this.txtCP.DataBindings.Clear();
             this.txtCP.DataBindings.Add("Text", model, "CP");
+            this.txtEstado.DataBindings.Clear();
+            this.txtEstado.DataBindings.Add("Text", model, "Estado");
             this.txtMunicipio.DataBindings.Clear();
             this.txtMunicipio.DataBindings.Add("Text", model, "Municipio");
             this.txtAsentamiento.DataBindings.Clear();
@@ -106,17 +108,70 @@ namespace PruebaCRUD.View.WinForm
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Guardar o actualizar
-            if(this.nuevo)
-            {
-                //Guardar
+            if (validaFormulario()) { 
+                //Guardar o actualizar
+                if(this.nuevo)
+                {
+                    //Guardar
 
+                }
+                else
+                {
+                    //Actualizar
+
+                }
             }
             else
             {
-                //Actualizar
-
+                MessageBox.Show("Faltan campos por completar","Información", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
+
+        private bool validaFormulario()
+        {
+            var validar = true;
+            if(txtNombre.Text == string.Empty)
+            {
+                txtNombre.Focus();
+                return false;
+            }
+            if(txtPrimerApellido.Text == string.Empty)
+            {
+                txtPrimerApellido.Focus();
+                return false;
+            }
+            if(txtCurp.Text==string.Empty)
+            {
+                txtCurp.Focus();
+                return false;
+            }
+            if(txtDireccionActual.Text ==string.Empty)
+            {
+                txtDireccionActual.Focus();
+                return false;
+            }
+            if(txtCP.Text == string.Empty)
+            {
+                txtCP.Focus();
+                return false;
+            }
+            if(txtEstado.Text == string.Empty)
+            {
+                txtEstado.Focus();
+                return false;
+            }
+            if(txtMunicipio.Text == string.Empty)
+            {
+                txtMunicipio.Focus();
+                return false;
+            }
+            if (txtAsentamiento.Text == string.Empty)
+            {
+                txtAsentamiento.Focus();
+                return false;
+            }
+
+            return validar;
         }
 
         private void txtCurp_Enter(object sender, EventArgs e)
@@ -136,10 +191,24 @@ namespace PruebaCRUD.View.WinForm
                 //Obtener Estado
                 var edo = await cphelper.EstadoPorId(int.Parse(asentamiento.IdEstado.ToString()));
                 txtEstado.Text = edo.Descripcion;
+                model.Estado = edo.Descripcion;
+
                 //Obtener Municipio
                 var municipio = await cphelper.EstadoPorEM(int.Parse(asentamiento.IdEstado.ToString()), asentamiento.IdMunicipio);
                 txtMunicipio.Text = municipio.Descripcion;
+                model.Municipio = municipio.Descripcion;
 
+                //Auto completar asentamiento
+                AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+
+                foreach (var item in asentamientos)
+                {
+                    coll.Add(item.Descripcion);
+                }
+
+                txtAsentamiento.AutoCompleteMode = AutoCompleteMode.Suggest;
+                txtAsentamiento.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtAsentamiento.AutoCompleteCustomSource = coll;
             }
         }
     }

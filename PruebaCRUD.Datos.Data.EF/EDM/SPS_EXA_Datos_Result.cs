@@ -28,5 +28,6 @@ namespace PruebaCRUD.Datos.Data.EF.EDM
         public string Asentamiento { get; set; }
         public string Calle { get; set; }
         public string Numero { get; set; }
+        public string Estado { get; set; }
     }
 }

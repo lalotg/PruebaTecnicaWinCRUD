@@ -1,4 +1,4 @@
-﻿using PruebaCRUD.Datos.Data.EF.EDM;
+﻿using PruebaCRUD.Datos.Data.EF;
 using PruebaCRUD.Model;
 using System;
 using System.Collections.Generic;

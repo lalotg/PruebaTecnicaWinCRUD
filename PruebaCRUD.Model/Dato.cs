@@ -19,6 +19,7 @@ namespace PruebaCRUD.Model
         public string Telefono { get; set; }
         public string DireccionActual { get; set; }
         public string CP { get; set; }
+        public string Estado { get; set; }
         public string Municipio { get; set; }
         public string Asentamiento { get; set; }
         public string Calle { get; set; }

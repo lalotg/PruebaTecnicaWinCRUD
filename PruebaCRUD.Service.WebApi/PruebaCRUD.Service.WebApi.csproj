@@ -114,6 +114,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsentamientosMXController.cs" />
+    <Compile Include="Controllers\CurpController.cs" />
     <Compile Include="Controllers\DatoController.cs" />
     <Compile Include="Controllers\EstadosMXController.cs" />
     <Compile Include="Controllers\MinucipiosMXController.cs" />
