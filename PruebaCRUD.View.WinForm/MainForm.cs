@@ -228,8 +228,8 @@ namespace PruebaCRUD.View.WinForm
         {
             //Cargar registro activo
             this.nuevo = false;
-
-            MessageBox.Show("Click");
+            this.model = (Dato)dgvDatos.CurrentRow.DataBoundItem;
+            this.AsignaEnlaceDatos();
         }
     }
 }
